@@ -1,0 +1,23 @@
+/* Footer Style */
+.custom-footer {
+  background: linear-gradient(90deg, #0f3c61, #145e85);
+}
+
+.footer-link {
+  color: #d4d4d4;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.social-icons i {
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.social-icons i:hover {
+  color: #00c8ff;
+}
