@@ -1,0 +1,23 @@
+body {
+  background: linear-gradient(to right, lightblue, white);
+  font-family: 'Poppins', sans-serif;
+  color: black;
+}
+
+h2, h4 {
+  color: navy;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}

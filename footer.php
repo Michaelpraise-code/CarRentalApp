@@ -37,8 +37,9 @@
       <!-- Contact Info -->
       <div class="col-md-4 mb-3">
         <h5>Contact Us</h5>
-        <p>Email: support@carrentals.com</p>
-        <p>Phone: +234 801 234 5678</p>
+        <p><i class="bi bi-telephone-fill me-2"></i> +234 800 123 4567</p>
+        <p><i class="bi bi-geo-alt-fill me-2"></i> 12 Palm Avenue, Ikeja, Lagos</p>
+        <p><i class="bi bi-envelope-fill me-2"></i> support@michaelscars.com</p>
         <div class="social-icons">
           <a href="#" class="me-2 text-white"><i class="bi bi-facebook"></i></a>
           <a href="#" class="me-2 text-white"><i class="bi bi-twitter-x"></i></a>

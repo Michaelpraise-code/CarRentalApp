@@ -1,0 +1,117 @@
+/* General body styling */
+body {
+  background: linear-gradient(to bottom right, lightblue, white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+/* Container padding and max width */
+.container {
+  max-width: 1200px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Page heading */
+h2 {
+  color: #007bff; /* Bootstrap primary blue */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Alert box styling override */
+.alert {
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+/* Earnings display */
+.mb-3 strong {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Table customizations */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.table tbody tr:hover {
+  background-color: #e9f5ff;
+  cursor: default;
+}
+
+/* Status column styling */
+td:nth-child(8) {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Status badges */
+td:nth-child(8).active {
+  color: #155724;
+  background-color: #d4edda;
+  border-radius: 4px;
+  padding: 3px 8px;
+  text-align: center;
+  width: 100px;
+}
+
+td:nth-child(8).returned {
+  color: #004085;
+  background-color: #cce5ff;
+  border-radius: 4px;
+  padding: 3px 8px;
+  text-align: center;
+  width: 100px;
+}
+
+td:nth-child(8).due {
+  color: #856404;
+  background-color: #fff3cd;
+  border-radius: 4px;
+  padding: 3px 8px;
+  text-align: center;
+  width: 120px;
+}
+
+/* Buttons */
+.btn-success {
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,123,255,0.4);
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .table-responsive {
+    font-size: 0.9rem;
+  }
+  .btn-success, .btn-secondary {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+}

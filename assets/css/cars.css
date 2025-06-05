@@ -1,0 +1,14 @@
+body {
+  background: linear-gradient(135deg, #204b6e 0%, #2e7db1 100%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}

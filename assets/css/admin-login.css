@@ -1,0 +1,19 @@
+body {
+    background: linear-gradient(to right, lightblue, white);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  form label {
+    color: darkblue;
+  }
+  
+  form .btn-primary {
+    background-color: navy;
+    color: white;
+    border: none;
+  }
+  
+  form .btn-primary:hover {
+    background-color: darkblue;
+  }
+  

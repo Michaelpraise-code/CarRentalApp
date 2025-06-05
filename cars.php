@@ -1,151 +1,64 @@
 <?php 
-// $cars = [
-//     [
-//         'id'=>1,
-//         'make'=>'Lamborgini',
-//         'model'=>'Urus',
-//         'description'=>'Best in use',
-//         'year'=>2025,
-//         'daily_rate'=>5500,
-//         'status'=>'Available',
-//         'image'=>'assets/images/urus.jpg'
-//     ],
-//     [
-//         'id'=>2,
-//         'make'=>'Nissan',
-//         'model'=>'Sentra',
-//         'description'=>'Beats your imagination',
-//         'year'=>2024,
-//         'daily_rate'=>700,
-//         'status'=>'Rented'
-//     ],
-//     [
-//         'id'=>3,
-//         'make'=>'Rolls-Royce',
-//         'model'=>'Phantom',
-//         'description'=>'best in the cruising',
-//         'year'=>2023,
-//         'daily_rate'=>4000,
-//         'status'=>'Available'
-//     ],
-//     [
-//         'id'=>4,
-//         'make'=>'Lamborgini',
-//         'model'=>'Hurican',
-//         'description'=>'Just as the name implies, it moves like hurican',
-//         'year'=>2022,
-//         'daily_rate'=>6000,
-//         'status'=>'Rented'
-//     ],
-//     [
-//         'id'=>5,
-//         'make'=>'Mercedes-Benz',
-//         'model'=>'AMG GT 63',
-//         'description'=>'just as your dream',
-//         'year'=>2024,
-//         'daily_rate'=>800,
-//         'status'=>'Available'
-//     ],
-//     [
-//         'id'=>6,
-//         'make'=>'Ferrari',
-//         'model'=>'GTB',
-//         'description'=>'Just like flash',
-//         'year'=>2022,
-//         'daily_rate'=>5000,
-//         'status'=>'Rented'
-//     ],
-//     [
-//         'id'=>7,
-//         'make'=>'Dodge',
-//         'model'=>'Charger',
-//         'description'=>'Lightens you with extreme speed',
-//         'year'=>2023,
-//         'daily_rate'=>600,
-//         'status'=>'Rented'
-//     ],
-//     [
-//         'id'=>8,
-//         'make'=>'Lexus',
-//         'model'=>'ES-570',
-//         'description'=>'Latest model',
-//         'year'=>2025,
-//         'daily_rate'=>2000,
-//         'status'=>'Available'
-//     ],
-// ]
 require_once 'config/db-connect.php';
+include 'components/NavBar.php';
 
+// Fetch all cars
 $sql = 'SELECT * FROM cars';
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Car Rental Service</title>
+  <title>Cars | Michael's Car Store</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap + Icons -->
   <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" />
-
-
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/cars.css">
 </head>
 <body>
 
-  <?php include 'components/NavBar.php'; ?>
+<div class="container py-5">
+  <h2 class="text-center text-light mt-5">Explore Our Cars</h2>
+  <p class="text-center text-white mb-5">Select from our available fleet. Book your ride in minutes!</p>
 
+  <div class="row g-4">
+    <?php foreach ($cars as $car): ?>
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-sm h-100">
+          <!-- Image Handling -->
+          <img src="carimages/<?= $car['images'] ?>" class="card-img-top" alt="<?= htmlspecialchars($car['make'] . ' ' . $car['model']) ?>" style="height: 200px; object-fit: cover;">
 
-  <div class="container">
-    <h2>Car Rental</h2>
-    <h4>Welcome To Michael's Car Store</h4>
+          <div class="card-body">
+            <h5 class="card-title"><?= $car['make'] . ' ' . $car['model'] ?></h5>
+            <p><strong>Year:</strong> <?= $car['year'] ?></p>
+            <p><strong>Daily Rate:</strong> $<?= number_format($car['daily_rate'], 2) ?></p>
+            <p><strong>Status:</strong> 
+              <span class="badge bg-<?= $car['status'] === 'available' ? 'success' : 'danger' ?>">
+                <?= ucfirst($car['status']) ?>
+              </span>
+            </p>
+          </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Make</th>
-          <th>Model</th>
-          <th>Year</th>
-          <th>Daily Rate</th>
-          <th>Status</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php foreach ($cars as $car) { ?>
-          <tr>
-            <td><?php echo $car['id']; ?></td>
-            <td><?php echo htmlspecialchars($car['make']); ?></td>
-            <td><?php echo htmlspecialchars($car['model']); ?></td>
-            <td><?php echo $car['year']; ?></td>
-            <td>$<?php echo number_format($car['daily_rate'], 2); ?></td>
-            <td>
-              <?php if ($car['status'] === 'available') { ?>
-                <div class="btn-status available"><?php echo ucfirst($car['status']); ?></div>
-              <?php } else { ?>
-                <div class="btn-status rented"><?php echo ucfirst($car['status']); ?></div>
-              <?php } ?>
-            </td>
-            <td>
-              <?php if ($car['status'] === 'available') { ?>
-                <a href="car.php?id=<?php echo $car['id']; ?>" class="btn-action btn-primary">View Car</a>
-              <?php } else { ?>
-                <button class="btn-action btn-secondary" disabled>Unavailable</button>
-              <?php } ?>
-            </td>
-          </tr>
-        <?php } ?>
-      </tbody>
-    </table>
+          <div class="card-footer bg-transparent border-0 text-center pb-3">
+            <?php if ($car['status'] === 'available'): ?>
+              <a href="car.php?id=<?= $car['id'] ?>" class="btn btn-primary w-75">View Car</a>
+            <?php else: ?>
+              <button class="btn btn-secondary w-75" disabled>Unavailable</button>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    <?php endforeach; ?>
   </div>
+</div>
 
-  <!-- Bootstrap JS -->
-  <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

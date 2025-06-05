@@ -1,0 +1,44 @@
+body {
+  background: linear-gradient(to right, lightblue, white);
+  font-family: 'Poppins', sans-serif;
+  padding-top: 60px;
+  color: black;
+}
+
+.login-container {
+  max-width: 500px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px lightgray;
+  margin: auto;
+}
+
+h2 {
+  color: navy;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: navy;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: blue;
+}
+
+.alert {
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.form-control {
+  border-radius: 8px;
+  border: 1px solid lightgray;
+}
