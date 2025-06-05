@@ -46,6 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
 <body style="background: linear-gradient(to right, lightblue, white); font-family: 'Poppins', sans-serif;">
+  <div style="position: absolute; top: 20px; left: 20px;">
+    <a href="../index.php" class="btn btn-primary">Home</a>
+  </div>
+
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-6 bg-white p-4 rounded shadow">

@@ -46,6 +46,7 @@ foreach ($rentals as $rental) {
   <!-- Bootstrap CSS -->
   <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/admin.css" />
+  <link rel="stylesheet" href="../assets/css/manage-rentals.css" />
 </head>
 <body>
 
@@ -61,7 +62,7 @@ foreach ($rentals as $rental) {
     <?php unset($_SESSION['alert']); ?>
   <?php endif; ?>
 
-  <div class="earnings">Total Earnings: ₦<?= number_format($earnings, 2) ?></div>
+  <div class="earnings">Total Earnings: $<?= number_format($earnings, 2) ?></div>
 
   <?php if (count($rentals) === 0): ?>
     <p class="text-center fs-5">No rentals found.</p>
@@ -69,61 +70,68 @@ foreach ($rentals as $rental) {
     <table>
       <thead>
         <tr>
-          <th class="customer-col">Customer Name</th>
-          <th class="email-col">Email</th>
-          <th class="phone-col">Phone</th>
-          <th class="car-col">Car</th>
-          <th class="date-col">Rental Date</th>
-          <th class="date-col">Return Date</th>
-          <th class="cost-col">Total Cost</th>
-          <th class="status-col">Status</th>
-          <th class="action-col">Actions</th>
+          <th class="id-col"><a href="#">ID</a></th>
+          <th class="customer-col"><a href="#">Customer Name</a></th>
+          <th class="email-col"><a href="#">Email</a></th>
+          <th class="phone-col"><a href="#">Phone</a></th>
+          <th class="car-col"><a href="#">Car</a></th>
+          <th class="date-col"><a href="#">Rental Date</a></th>
+          <th class="date-col"><a href="#">Return Date</a></th>
+          <th class="cost-col"><a href="#">Total Cost</a></th>
+          <th class="status-col"><a href="#">Status</a></th>
+          <th class="action-col"><a href="#">Actions</a></th>
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($rentals as $r): ?>
+        <?php foreach ($rentals as $r): 
+          $status = strtolower($r['status']);
+          $badgeClass = '';
+          switch ($status) {
+            case 'active':
+              $badgeClass = 'badge-active';
+              break;
+            case 'returned':
+              $badgeClass = 'badge-returned';
+              break;
+            case 'due':
+              $badgeClass = 'badge-due';
+              break;
+            default:
+              $badgeClass = 'badge-secondary';
+              break;
+          }
+        ?>
           <tr>
+            <td class="id-col" data-label="ID">
+              <a href="#"><?= (int) $r['id'] ?></a>
+            </td>
             <td class="customer-col" data-label="Customer">
-              <?= htmlspecialchars($r['first_name'] . ' ' . $r['last_name']) ?>
+              <a href="#"><?= htmlspecialchars($r['first_name'] . ' ' . $r['last_name']) ?></a>
             </td>
             <td class="email-col" data-label="Email">
-              <?= htmlspecialchars($r['email']) ?>
+              <a href="#"><?= htmlspecialchars($r['email']) ?></a>
             </td>
             <td class="phone-col" data-label="Phone">
-              <?= htmlspecialchars($r['phone']) ?>
+              <a href="#"><?= htmlspecialchars($r['phone']) ?></a>
             </td>
             <td class="car-col" data-label="Car">
-              <?= htmlspecialchars($r['make'] . ' ' . $r['model']) ?>
+              <a href="#"><?= htmlspecialchars($r['make'] . ' ' . $r['model']) ?></a>
             </td>
             <td class="date-col" data-label="Rental Date">
-              <?= date('d M Y', strtotime($r['rental_date'])) ?>
+              <a href="#"><?= date('d M Y', strtotime($r['rental_date'])) ?></a>
             </td>
             <td class="date-col" data-label="Return Date">
-              <?= date('d M Y', strtotime($r['return_date'])) ?>
+              <a href="#"><?= date('d M Y', strtotime($r['return_date'])) ?></a>
             </td>
-            <td class="cost-col" data-label="Cost">$<?= number_format($r['total_cost'], 2) ?></td>
+            <td class="cost-col" data-label="Cost">
+              <a href="#">$<?= number_format($r['total_cost'], 2) ?></a>
+            </td>
             <td class="status-col" data-label="Status">
-              <?php
-                $status = strtolower($r['status']);
-                $badgeClass = '';
-                switch ($status) {
-                  case 'active':
-                    $badgeClass = 'badge-active';
-                    break;
-                  case 'returned':
-                    $badgeClass = 'badge-returned';
-                    break;
-                  case 'due':
-                    $badgeClass = 'badge-due';
-                    break;
-                  default:
-                    $badgeClass = 'badge-secondary';
-                    break;
-                }
-              ?>
-              <span class="badge-status <?= $badgeClass ?>" title="<?= ucfirst($status) ?>">
-                <?= ucfirst($status) ?>
-              </span>
+              <a href="#">
+                <span class="badge-status <?= $badgeClass ?>" title="<?= ucfirst($status) ?>">
+                  <?= ucfirst($status) ?>
+                </span>
+              </a>
             </td>
             <td class="action-col" data-label="Actions">
               <?php if ($status !== 'returned'): ?>

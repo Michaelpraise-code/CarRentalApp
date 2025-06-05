@@ -10,16 +10,20 @@ $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home | Car Rentals</title>
-  <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/index.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MJ Car Rental</title>
+
+  <!-- Bootstrap CSS first -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your custom style.css after Bootstrap -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.1">
 </head>
+
 <body>
 
-<header class="hero-section text-white text-center d-flex align-items-center">
+<header class="hero-section text-white text-center d-flex align-items-center mt-">
   <div class="container">
     <h1>Drive Your Dream</h1>
     <p>Affordable, Reliable & Stylish Car Rentals Across Nigeria</p>

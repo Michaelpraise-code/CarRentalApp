@@ -1,156 +1,186 @@
+/* Global body styling */
 body {
-  background: linear-gradient(to bottom, lightblue, white);
-  font-family: Arial, sans-serif;
-  padding: 30px;
+  background: linear-gradient(to bottom, skyblue, white);
+  font-family: 'Poppins', sans-serif;
+  color: #1A1A1A;
+  min-height: 100vh;
 }
 
 .container {
-  max-width: 1200px;
-  margin: auto;
-  background: white;
+  padding: 2rem;
+}
+
+/* Animation for card float effect */
+@keyframes floatSideways {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+/* Card Styling */
+.card {
+  background: skyblue;
+  border: 4px solid lightgray;
   border-radius: 12px;
-  box-shadow: 0 0 10px lightblue;
-  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: floatSideways 6s ease-in-out infinite;
+  animation-play-state: running;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  animation-play-state: paused;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.card h5 {
+  color: #0F2A44;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.card p {
+  color: #1A1A1A;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Responsive card layout */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Table Styling */
+.table {
+  background: skyblue;
+  border: 4px solid lightgray;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1A1A1A;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  padding: 1rem;
+}
+
+.table-primary {
+  background: #0F2A44;
+  color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Button Styling */
+.btn-primary,
+.btn-danger {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #1A3C5A;
+}
+
+.btn-danger {
+  background-color: #8B0000;
+}
+
+/* Hover effects: scale, shadow, color change */
+.btn-primary:hover {
+  background-color: #0F2A44;
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn-danger:hover {
+  background-color: #670000;
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Ripple Effect */
+.btn-primary::after,
+.btn-danger::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: scale(0);
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  pointer-events: none;
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.btn-primary:active::after,
+.btn-danger:active::after {
+  left: var(--x);
+  top: var(--y);
+  opacity: 1;
+  transform: scale(0);
+}
+
+/* Alerts */
+.alert {
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Headings */
+h1 {
+  color: #0F2A44;
+  font-weight: 800;
+  font-size: 2.8rem;
 }
 
 h2 {
-  text-align: center;
-  color: navy;
-  margin-bottom: 20px;
+  color: #1A1A1A;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
-.back-dashboard {
-  display: inline-block;
-  margin-bottom: 20px;
-  text-decoration: none;
-  color: navy;
-  font-weight: bold;
-}
-
-.earnings {
-  text-align: right;
-  font-size: 18px;
-  font-weight: bold;
-  color: darkblue;
-  margin-bottom: 20px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-  table-layout: fixed;
-}
-
-thead {
-  background-color: lightblue;
-}
-
-th {
-  white-space: nowrap;
-  padding: 12px 10px;
-  text-align: left;
-  font-weight: bold;
-  border-bottom: 2px solid lightgray;
-  color: navy;
-  font-size: 15px;
-}
-
-td {
-  padding: 12px 10px;
-  border-bottom: 1px solid #ccc;
-  font-size: 14px;
-  word-wrap: break-word;
-}
-
-tr:hover {
-  background-color: #f1f9ff;
-}
-
-.badge-status {
-  padding: 5px 10px;
-  border-radius: 12px;
-  font-size: 13px;
-  display: inline-block;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-.badge-active {
-  background-color: deepskyblue;
-  color: white;
-}
-
-.badge-returned {
-  background-color: mediumseagreen;
-  color: white;
-}
-
-.badge-due {
-  background-color: orange;
-  color: white;
-}
-
-.btn-returned {
-  background-color: navy;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.btn-returned:hover {
-  background-color: darkblue;
-}
-
-.no-action-btn {
-  background-color: lightgray;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 13px;
-  cursor: not-allowed;
-}
-
-/* Responsive table handling */
-@media (max-width: 768px) {
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2.2rem;
   }
-
-  thead tr {
-    display: none;
+  h2 {
+    font-size: 1.6rem;
   }
-
-  tr {
-    margin-bottom: 15px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px lightblue;
-  }
-
-  td {
-    text-align: right;
-    position: relative;
-    padding-left: 50%;
-  }
-
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    top: 12px;
-    font-weight: bold;
-    color: navy;
-    text-align: left;
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
   }
 }

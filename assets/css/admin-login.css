@@ -1,19 +1,40 @@
 body {
-    background: linear-gradient(to right, lightblue, white);
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  form label {
-    color: darkblue;
-  }
-  
-  form .btn-primary {
-    background-color: navy;
-    color: white;
-    border: none;
-  }
-  
-  form .btn-primary:hover {
-    background-color: darkblue;
-  }
-  
+  background: linear-gradient(to right, lightblue, white);
+  font-family: 'Poppins', sans-serif;
+}
+
+form {
+  background-color:skyblue; /* Slightly lighter dark shade for form background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+  color:navy; /* Light gray for visibility and attractiveness */
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 18px; /* Larger font size for labels */
+  font-weight: bold;
+}
+
+form input {
+  background-color: skyblue; /* Slightly lighter dark shade for inputs */
+  color: lightf; /* White text for contrast and visibility */
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 16px; /* Larger font size for input text */
+  border: 1px solid #666666;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+form .btn-primary {
+  background-color: navy;
+  color: skyblue;
+  border: none;
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 16px; /* Larger font size for button */
+}
+
+form .btn-primary:hover {
+  background-color: darkblue;
+}

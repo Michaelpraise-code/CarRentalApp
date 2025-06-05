@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom, #e6f0ff, #ffffff);
+  background: linear-gradient(to bottom, skyblue, white);
   color: #333;
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@ a {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(to bottom right, skyblue, white);
   height: 60vh;
   display: flex;
   justify-content: center;
@@ -52,7 +52,7 @@ a {
 
 /* Latest Cars Section */
 .latest-cars {
-  background-color: #f8f9fa;
+  background: linear-gradient(to bottom, skyblue, white);
   padding: 60px 0;
 }
 
@@ -86,7 +86,7 @@ a {
 
 /* Testimonials Section */
 .testimonials {
-  background: linear-gradient(to right, #764ba2, #667eea);
+  background: linear-gradient(to right, skyblue, white);
   color: white;
   padding: 60px 0;
 }
@@ -110,7 +110,7 @@ a {
 
 /* FAQ Section */
 .faq-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(to bottom right, skyblue, white);
   color: white;
   padding: 60px 20px;
 }
@@ -147,7 +147,7 @@ a {
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #e0eaff;
+  background-color: #e0f7ff;
   color: #333;
 }
 
@@ -157,28 +157,28 @@ a {
 }
 
 .faq-icon {
-  color: #764ba2;
+  color: #1976d2;
   font-size: 1.2rem;
 }
 
 /* Buttons */
 .btn-primary {
-  background-color: #764ba2;
-  border-color: #764ba2;
+  background-color: skyblue;
+  border-color: skyblue;
 }
 
 .btn-primary:hover {
-  background-color: #5e3f91;
-  border-color: #5e3f91;
+  background-color: deepskyblue;
+  border-color: deepskyblue;
 }
 
 .btn-outline-primary {
-  color: #764ba2;
-  border-color: #764ba2;
+  color: skyblue;
+  border-color: skyblue;
 }
 
 .btn-outline-primary:hover {
-  background-color: #764ba2;
+  background-color: skyblue;
   color: #fff;
 }
 

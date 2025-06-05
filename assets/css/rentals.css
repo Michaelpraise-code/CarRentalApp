@@ -2,22 +2,122 @@ body {
   background: linear-gradient(to right, lightblue, white);
   font-family: 'Poppins', sans-serif;
   color: black;
+  padding: 20px;
 }
 
+/* Headings */
 h2, h4 {
   color: navy;
 }
 
+/* Card Animations */
 .card {
+  background-color: skyblue;
+  border: 2px solid lightgray;
   border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 12px lightblue;
+  padding: 20px;
+  margin-bottom: 20px;
+  animation: floatSideways 6s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card:hover {
+  animation-play-state: paused;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes floatSideways {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+/* Table Styling */
 .table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid lightgray;
   border-radius: 10px;
   overflow: hidden;
+  background-color: skyblue;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .table th, .table td {
+  padding: 12px;
+  text-align: center;
   vertical-align: middle;
+  border: 1px solid lightblue;
+  font-weight: 500;
+}
+
+.table thead {
+  background-color: lightblue;
+  color: black;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background-color: #e0f0ff;
+}
+
+/* Buttons with Hover + Ripple */
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: lightblue;
+  color: black;
+  border: 2px solid darkblue;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  transform: scale(1.03);
+  background-color: white;
+  color: darkblue;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: scale(0);
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  pointer-events: none;
+  animation: ripple 0.6s linear;
+}
+
+.button:active::after {
+  left: var(--x);
+  top: var(--y);
+  opacity: 1;
+  transform: scale(0);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }

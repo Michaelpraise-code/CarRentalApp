@@ -171,7 +171,7 @@ $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
   </div>
 </div>
-
+<a href="dashboard.php" class="back-dashboard">← Back to Dashboard</a>
 <script src="../assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
