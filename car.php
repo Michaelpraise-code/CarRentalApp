@@ -47,6 +47,8 @@ if (!file_exists($fullLocalPath) || empty($car['carimages'])) {
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     </div>
+    <?php unset($_SESSION['rental_success']); ?>
+  <?php endif; ?>
 
   <div class="container mt-5">
     <h2 class="text-center mb-4">Car Details</h2>
@@ -72,7 +74,7 @@ if (!file_exists($fullLocalPath) || empty($car['carimages'])) {
             <input type="hidden" name="car_id" value="<?= $car['id'] ?>">
             <input type="hidden" name="daily_rate" value="<?= $car['daily_rate'] ?>">
 
-            <h4 class="mb-3 text-center">Book This Car</h4>
+            <h4 class="mb-3 text-center">Rent This Car</h4>
 
             <div class="mb-3">
               <label for="return_date" class="form-label">Return Date</label>
@@ -99,7 +101,6 @@ if (!file_exists($fullLocalPath) || empty($car['carimages'])) {
       </div>
     </div>
   </div>
-
   <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

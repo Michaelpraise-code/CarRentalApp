@@ -1,98 +1,138 @@
+/* Reset minor issues */
 body {
-  background: linear-gradient(135deg, #c9e7f6 0%, #ffffff 100%);
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
+  background: linear-gradient(to bottom right, lightblue, white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  margin-bottom: 40px;
 }
 
 h2 {
+  color: #0d6efd; /* Bootstrap primary blue */
   font-weight: 700;
-  color: #204b6e;
-  margin-bottom: 2rem;
 }
 
-.car-container {
-  background-color: #87bbda;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.car-container:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-.car-image {
-  max-width: 100%;
-  height: auto;
+.card {
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.car-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #2f79d3;
-  margin-bottom: 1rem;
-}
-
-.car-detail p {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #123236;
-}
-
-.form-control {
-  border-radius: 10px;
-  box-shadow: none;
-  border: 1px solid #ced4da;
-  padding: 10px 15px;
-}
-
-.btn-primary {
-  background-color: #2f79d3;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
   border: none;
+}
+
+.card:hover {
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.3);
+}
+
+.card-img-top {
+  border-bottom: 3px solid lightblue;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+strong {
+  color: #0d6efd;
+}
+
+.container {
+  max-width: 960px;
+}
+
+/* Booking form styling */
+form.shadow-sm {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+form h4 {
+  color: #0d6efd;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+form .form-label {
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+form .form-control {
+  border-radius: 8px;
+  border: 1.5px solid lightblue;
+  padding: 10px 12px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 8px rgba(13,110,253,0.25);
+}
+
+form button.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
   font-weight: 600;
   border-radius: 10px;
-  padding: 10px 15px;
+  padding: 12px;
+  font-size: 1.1rem;
   transition: background-color 0.3s ease;
 }
 
-.btn-primary:hover {
-  background-color: #2364b8;
+form button.btn-primary:hover,
+form button.btn-primary:focus {
+  background-color: #0b5ed7;
+  border-color: #0a53be;
+  box-shadow: 0 0 12px rgba(11, 94, 215, 0.5);
 }
 
-.badge-success {
-  background-color: #28a745;
-  color: #fff;
-  font-weight: 500;
+/* Alert styling overrides */
+.alert {
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-.badge-danger {
-  background-color: #dc3545;
-  color: #fff;
-  font-weight: 500;
+.alert-success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
 }
 
 .alert-warning {
-  font-weight: 500;
-  padding: 10px;
-  border-radius: 8px;
+  background-color: #fff3cd;
+  color: #664d03;
+  border: 1px solid #ffecb5;
+  font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .car-container {
-    padding: 1.5rem;
+/* Responsive tweaks */
+@media (max-width: 767.98px) {
+  .card-img-top {
+    height: 200px;
   }
 
-  .car-title {
-    font-size: 1.5rem;
+  form.shadow-sm {
+    padding: 1.5rem 1.5rem;
   }
 
-  .form-control,
-  .btn-primary {
-    font-size: 0.95rem;
+  .container {
+    padding: 0 1rem;
   }
 }

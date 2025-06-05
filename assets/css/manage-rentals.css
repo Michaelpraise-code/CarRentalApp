@@ -1,0 +1,131 @@
+/* General Layout */
+body {
+    background: linear-gradient(to bottom right, lightblue, white);
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px lightblue;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h2 {
+    text-align: center;
+    color: darkblue;
+    margin-bottom: 30px;
+  }
+  
+  /* Earnings Box */
+  .earnings {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: darkgreen;
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid lightblue;
+  }
+  
+  table thead {
+    background-color: lightblue;
+    color: black;
+  }
+  
+  table th, table td {
+    padding: 12px;
+    border: 1px solid lightblue;
+    text-align: center;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  table tbody tr:hover {
+    background-color: #e0f0ff;
+  }
+  
+  /* Badge Styles */
+  .badge-status {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    display: inline-block;
+  }
+  
+  .badge-active {
+    background-color: orange;
+    color: white;
+  }
+  
+  .badge-returned {
+    background-color: green;
+    color: white;
+  }
+  
+  .badge-due {
+    background-color: red;
+    color: white;
+  }
+  
+  .badge-secondary {
+    background-color: gray;
+    color: white;
+  }
+  
+  /* Buttons */
+  .btn-returned,
+  .no-action-btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .btn-returned {
+    background-color: blue;
+    color: white;
+  }
+  
+  .btn-returned:hover {
+    background-color: darkblue;
+  }
+  
+  .no-action-btn {
+    background-color: lightgray;
+    color: darkgray;
+    cursor: not-allowed;
+  }
+  
+  /* Back Button */
+  .back-dashboard {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    background-color: lightblue;
+    color: black;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid darkblue;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-dashboard:hover {
+    background-color: white;
+    color: darkblue;
+    text-decoration: none;
+  }
+  

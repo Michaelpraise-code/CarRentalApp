@@ -1,117 +1,156 @@
-/* General body styling */
 body {
-  background: linear-gradient(to bottom right, lightblue, white);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 100vh;
+  background: linear-gradient(to bottom, lightblue, white);
+  font-family: Arial, sans-serif;
+  padding: 30px;
 }
 
-/* Container padding and max width */
 .container {
   max-width: 1200px;
+  margin: auto;
   background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px lightblue;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Page heading */
 h2 {
-  color: #007bff; /* Bootstrap primary blue */
-  font-weight: 700;
   text-align: center;
+  color: navy;
+  margin-bottom: 20px;
+}
+
+.back-dashboard {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: navy;
+  font-weight: bold;
+}
+
+.earnings {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  color: darkblue;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
   margin-bottom: 30px;
+  table-layout: fixed;
 }
 
-/* Alert box styling override */
-.alert {
-  font-size: 1rem;
-  border-radius: 6px;
+thead {
+  background-color: lightblue;
 }
 
-/* Earnings display */
-.mb-3 strong {
-  font-size: 1.2rem;
-  color: #333;
+th {
+  white-space: nowrap;
+  padding: 12px 10px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid lightgray;
+  color: navy;
+  font-size: 15px;
 }
 
-/* Table customizations */
-.table {
-  border-radius: 8px;
-  overflow: hidden;
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  word-wrap: break-word;
 }
 
-.table thead {
-  background-color: #007bff;
-  color: white;
-  font-weight: 600;
-  font-size: 0.95rem;
+tr:hover {
+  background-color: #f1f9ff;
 }
 
-.table tbody tr:hover {
-  background-color: #e9f5ff;
-  cursor: default;
-}
-
-/* Status column styling */
-td:nth-child(8) {
-  font-weight: 600;
+.badge-status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  display: inline-block;
+  font-weight: bold;
   text-transform: capitalize;
 }
 
-/* Status badges */
-td:nth-child(8).active {
-  color: #155724;
-  background-color: #d4edda;
-  border-radius: 4px;
-  padding: 3px 8px;
-  text-align: center;
-  width: 100px;
+.badge-active {
+  background-color: deepskyblue;
+  color: white;
 }
 
-td:nth-child(8).returned {
-  color: #004085;
-  background-color: #cce5ff;
-  border-radius: 4px;
-  padding: 3px 8px;
-  text-align: center;
-  width: 100px;
+.badge-returned {
+  background-color: mediumseagreen;
+  color: white;
 }
 
-td:nth-child(8).due {
-  color: #856404;
-  background-color: #fff3cd;
-  border-radius: 4px;
-  padding: 3px 8px;
-  text-align: center;
-  width: 120px;
+.badge-due {
+  background-color: orange;
+  color: white;
 }
 
-/* Buttons */
-.btn-success {
-  font-size: 0.85rem;
-  padding: 4px 12px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,123,255,0.4);
-  transition: background-color 0.3s ease;
+.btn-returned {
+  background-color: navy;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
 }
 
-.btn-success:hover {
-  background-color: #0056b3;
+.btn-returned:hover {
+  background-color: darkblue;
 }
 
-.btn-secondary {
-  font-size: 0.85rem;
-  padding: 4px 12px;
-  border-radius: 6px;
+.no-action-btn {
+  background-color: lightgray;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: not-allowed;
 }
 
-/* Responsive tweaks */
+/* Responsive table handling */
 @media (max-width: 768px) {
-  .table-responsive {
-    font-size: 0.9rem;
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
   }
-  .btn-success, .btn-secondary {
-    padding: 6px 10px;
-    font-size: 0.75rem;
+
+  thead tr {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px lightblue;
+  }
+
+  td {
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    font-weight: bold;
+    color: navy;
+    text-align: left;
   }
 }
