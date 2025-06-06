@@ -8,96 +8,11 @@
   <title>About Us | Car Rental</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #204b6e 0%, #2e7db1 100%);
-      color: #fff;
-      line-height: 1.6;
-      padding-top: 70px;
-      text-align: center;
-    }
-    .container {
-      max-width: 900px;
-      margin: 40px auto 80px;
-      padding: 0 20px;
-      text-align: left;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: #aad4ff;
-      border-bottom: 3px solid #3ecf8e;
-      padding-bottom: 10px;
-      letter-spacing: 1.2px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: #aad4ff;
-      letter-spacing: 1.1px;
-    }
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-      color: #e6ebf1cc;
-      font-weight: 500;
-    }
-    ul {
-      font-size: 1.1rem;
-      margin-left: 30px;
-      margin-bottom: 30px;
-      list-style-type: disc;
-      color: #e6ebf1cc;
-    }
-    ul li {
-      margin-bottom: 10px;
-    }
-    .btn-primary {
-      background-color: #3ecf8e;
-      border: none;
-      padding: 14px 40px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 30px;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 0 14px #3ecf8e;
-      color: #0b2f1a;
-      display: inline-block;
-      text-align: center;
-      text-decoration: none;
-    }
-    .btn-primary:hover {
-      background-color: #2ca86c;
-      box-shadow: 0 0 20px #2ca86c;
-      color: #fff;
-      text-decoration: none;
-    }
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      h2 {
-        font-size: 1.6rem;
-      }
-      p, ul {
-        font-size: 1rem;
-      }
-      .btn-primary {
-        padding: 12px 30px;
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
-    
-  <div class="container">
+<body style="background: linear-gradient(135deg, #204b6e 0%, #2e7db1 100%);">
+
+  <div class="container about-container text-light">
     <h1>About Our Car Rental Service</h1>
 
     <h2>Our Mission</h2>
@@ -175,7 +90,8 @@
 
     <a href="cars.php" class="btn-primary">Explore Our Vehicles</a>
   </div>
- <?php include 'footer.php'; ?>
+
+  <?php include 'footer.php'; ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
