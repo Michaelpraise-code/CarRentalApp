@@ -12,7 +12,7 @@ $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MJ Car Rental</title>
+  <title>EdMic Car Rental</title>
 
   <!-- Bootstrap CSS first -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,51 +23,53 @@ $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-<header class="hero-section text-white text-center d-flex align-items-center mt-">
+<header class="hero-section text-white text-center d-flex align-items-center" style="background: url('assets/images/hero-bg.jpg') no-repeat center center; background-size: cover; height: 45vh;">
   <div class="container">
     <h1>Drive Your Dream</h1>
-    <p>Affordable, Reliable & Stylish Car Rentals Across Nigeria</p>
+    <p>Experience comfort, class, and reliability with EdMic Car Store. From daily commutes to weekend getaways, we’ve got the perfect ride waiting for you—anywhere in Nigeria.</p>
     <a href="cars.php" class="btn btn-primary mt-3">Browse Our Fleet</a>
   </div>
 </header>
 
-<section class="why-us text-center py-5">
+
+<section class="why-us text-center text-white py-5">
   <div class="container">
-    <h2>Why Choose Michael's Car Store?</h2>
+    <h2>Why EdMic Car Store?</h2>
     <div class="row mt-4">
       <div class="col-md-4">
         <i class="bi bi-car-front-fill fs-2 mb-2 text-primary"></i>
-        <h5>Diverse Fleet</h5>
-        <p>From compact to luxury, we have the perfect car.</p>
+        <h5>Wide Range</h5>
+        <p>Cars for every need and style.</p>
       </div>
       <div class="col-md-4">
         <i class="bi bi-shield-check fs-2 mb-2 text-primary"></i>
-        <h5>Trust & Safety</h5>
-        <p>Vehicles maintained to the highest standards.</p>
+        <h5>Reliable</h5>
+        <p>Well-maintained and safe.</p>
       </div>
       <div class="col-md-4">
         <i class="bi bi-telephone-inbound fs-2 mb-2 text-primary"></i>
-        <h5>24/7 Support</h5>
-        <p>We're here to help before and during your trip.</p>
+        <h5>24/7 Help</h5>
+        <p>Support anytime, anywhere.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="latest-cars py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Latest Arrivals</h2>
-    <div class="row">
-      <?php if(!empty($cars)): ?>
-        <?php foreach($cars as $car): ?>
-          <div class="col-md-6 col-lg-4">
-        <div class="card shadow-sm h-100">
-          <!-- Image Handling -->
-          <img src="carimages/<?= $car['images'] ?>" class="card-img-top" alt="<?= htmlspecialchars($car['make'] . ' ' . $car['model']) ?>" style="height: 150px; object-fit: cover;">
 
-              <h6><?= htmlspecialchars($car['make']) ?> <?= htmlspecialchars($car['model']) ?></h6>
-              <p><?= htmlspecialchars($car['year']) ?> • $<?= number_format($car['daily_rate']) ?>/day</p>
-              <a href="car.php?id=<?= intval($car['id']) ?>" class="btn btn-outline-primary btn-sm">View</a>
+<section class="latest-cars py-5 ">
+  <div class="container">
+    <h2 class="text-white text-center mb-4">Latest Arrivals</h2>
+    <div class="row">
+      <?php if (!empty($cars)): ?>
+        <?php foreach ($cars as $car): ?>
+          <div class="col-md-3 col-lg-3 mb-4">
+            <div class="card shadow-sm h-80">
+              <img src="carimages/<?= $car['images'] ?>" class="card-img-top" alt="<?= htmlspecialchars($car['make'] . ' ' . $car['model']) ?>" style="height: 160px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h6 class="card-title mb-1"><?= htmlspecialchars($car['make']) ?> <?= htmlspecialchars($car['model']) ?></h6>
+                <p class="mb-2"><?= htmlspecialchars($car['year']) ?> • $<?= number_format($car['daily_rate']) ?>/day</p>
+                <a href="car.php?id=<?= intval($car['id']) ?>" class="btn btn-primary btn-sm">View Details</a>
+              </div>
             </div>
           </div>
         <?php endforeach; ?>
@@ -80,22 +82,33 @@ $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </div>
 </section>
 
+
 <section class="testimonials text-white py-5">
   <div class="container text-center">
     <h2>What Our Customers Say</h2>
     <div class="row mt-4">
       <div class="col-md-4">
-        <blockquote>"Excellent service and clean cars!"<footer>— Sarah A.</footer></blockquote>
+        <blockquote>
+          "Booking was smooth, and the car was spotless and ready on time. Highly recommend!"
+          <footer>— Okoh Michael</footer>
+        </blockquote>
       </div>
       <div class="col-md-4">
-        <blockquote>"Affordable and convenient, 10/10."<footer>— Emeka T.</footer></blockquote>
+        <blockquote>
+          "Reliable service and fair pricing. I’ll definitely rent from EdMic again."
+          <footer>— Edwin Edison</footer>
+        </blockquote>
       </div>
       <div class="col-md-4">
-        <blockquote>"I got value for every Naira spent."<footer>— Bisi K.</footer></blockquote>
+        <blockquote>
+          "Customer support was excellent. They made my trip stress-free and enjoyable."
+          <footer>— Aslem Judith</footer>
+        </blockquote>
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="faq-section py-5">
   <div class="container text-center">

@@ -95,7 +95,7 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container text-light py-5 mt-5">
     <h2>Our Comprehensive Services</h2>
     <p class="intro">
       At Michael's Car Store, we pride ourselves on delivering unmatched automotive services tailored to your individual needs.  
@@ -151,7 +151,7 @@
       </p>
     </div>
   </div>
-
+<?php include 'footer.php'; ?>
   <!-- Bootstrap JS -->
   <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>

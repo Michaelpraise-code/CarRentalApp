@@ -36,6 +36,7 @@ if (!file_exists($fullLocalPath) || empty($car['carimages'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/car.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <?php include 'components/NavBar.php'; ?>
@@ -51,7 +52,10 @@ if (!file_exists($fullLocalPath) || empty($car['carimages'])) {
   <?php endif; ?>
 
   <div class="container mt-5">
-    <h2 class="text-center mb-4">Car Details</h2>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="mb-0 mt-5">Car Details</h2>
+      <a href="cars.php" class="btn btn-outline-secondary btn-sm">← Back to Cars</a>
+    </div>
 
     <div class="row justify-content-center">
       <!-- Car Image and Details -->

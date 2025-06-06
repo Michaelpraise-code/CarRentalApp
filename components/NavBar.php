@@ -8,7 +8,8 @@
     <!-- Brand -->
     <a class="navbar-brand d-flex align-items-center" href="index.php">
       <i class="bi bi-steering-wheel me-2 fs-4 text-success"></i>
-      <strong>Car Rentals</strong>
+      <strong><i class="bi bi-car-front me-1"></i>EdMic Car Rentals</strong>
+      
     </a>
 
     <!-- Toggler -->

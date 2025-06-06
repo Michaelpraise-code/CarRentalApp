@@ -58,7 +58,7 @@ $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endforeach; ?>
   </div>
 </div>
-
+<?php include 'footer.php'; ?>
 <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

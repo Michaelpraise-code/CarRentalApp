@@ -59,8 +59,8 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Terms and Conditions</h2>
+  <div class="container text-white mt-5 mb-5">
+    <h1 class="text-center mb-4">Terms and Conditions</h1>
 
     <p>Welcome to Michael's Car Store. These Terms and Conditions govern your use of our services. By accessing our website or using our services, you accept these terms in full.</p>
 
@@ -124,6 +124,7 @@
     <p>If you have any questions or concerns, please contact our support team for assistance.</p>
   </div>
 
+  <?php include 'footer.php'; ?>
   <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

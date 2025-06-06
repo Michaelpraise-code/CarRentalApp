@@ -119,7 +119,7 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container text-light mt-5">
     <h2>Contact Us</h2>
     <p class="intro">Have questions or want to book a car? Reach out to us and we'll get back to you promptly.</p>
 
@@ -140,6 +140,7 @@
     </form>
   </div>
 
+  <?php include 'footer.php'; ?>
   <!-- Bootstrap JS -->
   <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
